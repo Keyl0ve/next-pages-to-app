@@ -1,0 +1,31 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "clean": "turbo clean && rm -rf node_modules",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo build --filter=docs^... && changeset publish"
+  },
+  "devDependencies": {
+    "@acme/eslint-config": "*",
+    "@changesets/cli": "^2.26.2",
+    "eslint": "^8.54.0",
+    "prettier": "^2.8.8",
+    "turbo": "latest"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "npm@10.1.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "dependencies": {
+    "@next/eslint-plugin-next": "^14.0.3"
+  }
+}
